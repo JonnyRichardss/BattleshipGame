@@ -179,7 +179,7 @@ def PrintBoard(board:list[list[Square]],debug=False): #type hint for intellisens
                 
             if  currentSquare.isHidden and not debug:   #cases where the square is hidden
                 if currentSquare.isFlagged:
-                    print("F", "\t", end="") #when a hidden square is flagged, print "F"
+                    print("\u001b[031mF\u001b[0m", "\t", end="") #when a hidden square is flagged, print "F"
                 else:
                     print("X","\t",end="") #otherwise, print "X"
                     
@@ -193,7 +193,7 @@ def PrintBoard(board:list[list[Square]],debug=False): #type hint for intellisens
             elif currentSquare.cueNumber == 0:
                 print(" ", "\t", end="") #empty squares are displayed with a space
             else:
-                print(currentSquare.cueNumber, "\t", end="") #squares with clues have their number placed in them
+                print("\u001b[32m%s\u001b[0m" %(currentSquare.cueNumber), "\t", end="") #squares with clues have their number placed in them
             
         print('\n')
 
